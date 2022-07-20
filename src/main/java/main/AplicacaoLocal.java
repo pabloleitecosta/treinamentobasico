@@ -1,33 +1,43 @@
 package main;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class AplicacaoLocal {
 
+    private static final String VALOR_NAO_PODE_SER_ALTERADO = "Valores preenchidos: "; // STATAICA OU CONSTRAINT
+
     public static void main(String[] args) {
-        double valor = 0.00;
-        Integer idade = 0;
-        Integer dias = 0;
-        Integer meses = 0;
-        Integer anos = 0;
-        LocalDate dataAtual = LocalDate.now();
-
-        idade = 42;
-        dias  = idade * 365;
-        meses = idade * 12;
-        anos  = idade * 1;
-
-        System.out.println("Resultado de dias vividos: " + dias);
-        System.out.println("Resultado de meses vividos: " + meses);
-        System.out.println("Resultado de anos vividos: " + anos);
-
-        valor = dias / idade;
-        System.out.println("Contra prova do resulstado de dias vividos: " + valor);
-
-        valor = meses / idade;
-        System.out.println("Contra prova do resulstado de meses vividos: " + valor);
-
-        valor = anos / idade;
-        System.out.println("Contra prova do resulstado de anos vividos: " + valor);
+        metodoImprimeInteiro();
+        metodoImprimeData();
+        metodoImprimeDouble();
+        metodoImprimeEscrito();
     }
+
+
+    static void metodoImprimeInteiro(){
+        Integer valorInteiro = 0; // INTEIRO
+        valorInteiro = 235467;
+        Integer valorNegativo = -22;
+        System.out.println(VALOR_NAO_PODE_SER_ALTERADO+"Inteiro "+ valorInteiro);
+    }
+
+    static void metodoImprimeDouble(){
+        double valoresFracionados = 0.00; // Moeda fracionados
+        valoresFracionados = 321.86;
+        System.out.println(VALOR_NAO_PODE_SER_ALTERADO+"Fracionado "+valoresFracionados);
+    }
+
+    static void metodoImprimeEscrito(){
+        String valorEscrito = ""; // ESCRITA
+        valorEscrito = "JOZIAN 3456789@$%¨&*()_{^:>`l";
+        System.out.println(VALOR_NAO_PODE_SER_ALTERADO+"Escrito "+valorEscrito);
+    }
+
+    static void metodoImprimeData() {
+        Date dataAtual = new Date(); // Data
+        dataAtual = new Date("01/01/2021");
+        System.out.println(VALOR_NAO_PODE_SER_ALTERADO+"Data "+dataAtual);
+    }
+
+
 }
